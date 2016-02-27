@@ -1,76 +1,21 @@
-# HTML Tidy for PostHTML
+# HTML Hint for PostHTML
 
-[HTML Tidy](html-tidy.org) corrects and cleans up HTML and XML documents by fixing markup errors and upgrading legacy code to modern standards.
+Lint files with [HTML Hint](html.org)
 
 ## Install
 
 ```bash
-(sudo) npm i -D posthtml-tidy
+(sudo) npm i -D posthtml-hint
 ```
 
 ## Usage
 ### Options
-#### log   [Boolean]
+#### Rules [String|Object]
 
-Boolean option which logs tidied html to the console.
-By default no output is logged.
-
-#### rules [Object]
-
-If no rules set, tidy will use it's default setup.
-For rules take a look at the [Quick Reference](http://api.html-tidy.org/tidy/quickref_5.1.25.html).
-Multi-word rules separated with a hyphen should be used with camelCase.
+[Rules Reference](https://github.com/yaniswang/HTMLHint/wiki/Rules)
 
 ```js
-const tidy = require('posthtml-tidy')({
-  log: true,
-  rules: {
-    doctype: 'omit',
-    hideComments: true,
-    dropEmptyElements: true
-    // more options...
-  }
-})
-```
-#### Input
-```html
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <title>PostHTML Tidy</title>
-</head>
-
-<body>
-  <!-- Bad format -->
-  <h1>Well formatted</h1>
-  <h1>Bad formatted</h4>
-  <h6>Even worse formatted</h1
-
-  <div></div>
-</body>
-
-</html>
-```
-#### Output
-```html
-<html>
-<head>
-
-<meta charset="utf-8">
-<title>PostHTML Tidy</title>
-
-</head>
-
-<body>
-
-<h1>Well formatted</h1>
-<h1>Bad formatted</h1>
-<h6>Even worse formatted</h6>
-
-</body>
-</html>
+const hint = require('posthtml-hint')('./.htmlhintrc')
 ```
 
 ### Example using Node API
@@ -82,23 +27,14 @@ const fs = require('fs')
 
 const posthtml = require('posthtml')
 
-const tidy = require('posthtml-tidy')(/* options */)
+const hint = require('posthtml-hint')(/* options */)
 
 let html = fs.readFileSync('./index.html', 'utf8')
 
-posthtml([ tidy ])
+posthtml([ hint ])
   .process(html)
   .then(result => console.log(result.html))
 ```
-#### Input
-```html
-<h1>Well formatted</h1>
-<h1>Bad formatted</h4>
-<h6>Even worser formatted</h1
-```
 #### Output
-```html
-<h1>Well formatted</h1>
-<h1>Bad formatted</h1>
-<h6>Even worser formatted</h6>
-```
+
+![](https://github.com/doshprompt/htmlhint-stylish/blob/master/screenshot.png)
