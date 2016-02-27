@@ -49,6 +49,7 @@ module.exports = function (options) {
     } else {
       console.log(chalk.red(`\n${log.warning}  ${result} Errors`))
     }
+
     return tree
   }
 }
