@@ -32,6 +32,16 @@ $ npm i -D posthtml-hint
 const hint = require('posthtml-hint')('./path/to/.htmlhintrc')
 ```
 
+## Usage
+### Options
+#### Rules [String|Object]
+
+[Rules Reference](https://github.com/yaniswang/HTMLHint/wiki/Rules)
+
+```js
+const hint = require('posthtml-hint')('./.htmlhintrc')
+```
+
 #### Example
 
 For general usage and build process integration see [PostHTML Docs](https://github.com/posthtml/posthtml#usage)
