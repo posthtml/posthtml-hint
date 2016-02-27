@@ -1,5 +1,5 @@
 {
-  "name": "posthtml-lint",
+  "name": "posthtml-hint",
   "version": "0.2.0",
   "description": "Package HTML for PostHTML",
   "engines": {
@@ -8,22 +8,16 @@
   "main": "index.js",
   "dependencies": {
     "htmlhint": "^0.9.12",
-    "htmlhint-stylish": "^1.0.3",
-    "htmllint": "^0.2.7",
-    "textlint": "^5.3.1",
-    "textlint-plugin-html": "^0.1.2",
-    "xmllint": "^0.1.0"
-  },
-  "devDependencies": {
     "posthtml-render": "^1.0.5"
   },
+  "devDependencies": {},
   "author": {
     "name": "Michael Ciniawky",
     "email": "michael.ciniawsky@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "http:/github.com/michael-ciniawsky/posthtml-lint"
+    "url": "http:/github.com/michael-ciniawsky/posthtml-hint"
   },
   "license": "MIT"
 }

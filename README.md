@@ -1,5 +1,7 @@
 # HTML Hint for PostHTML
 
+!! Console output style not finished yet, returns just plain json at the moment !!
+
 Lint files with [HTML Hint](html.org)
 
 ## Install
