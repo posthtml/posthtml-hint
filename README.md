@@ -36,10 +36,10 @@ const hint = require('posthtml-hint')('./path/to/.htmlhintrc')
 ### Options
 #### Rules [String|Object]
 
-[Rules Reference](https://github.com/yaniswang/HTMLHint/wiki/Rules)
+#### [Rules Reference](https://github.com/yaniswang/HTMLHint/wiki/Rules)
 
 ```js
-const hint = require('posthtml-hint')('./.htmlhintrc')
+const hint = require('posthtml-hint')('./path/to/.htmlhintrc')
 ```
 
 #### Example
