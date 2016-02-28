@@ -1,7 +1,5 @@
 # HTML Hint for PostHTML
 
-!! Console output style not finished yet, returns just plain json at the moment !!
-
 Lint files with [HTML Hint](html.org)
 
 ## Install
@@ -14,10 +12,10 @@ Lint files with [HTML Hint](html.org)
 ### Options
 #### Rules [String|Object]
 
-[Rules Reference](https://github.com/yaniswang/HTMLHint/wiki/Rules)
+#### [Rules Reference](https://github.com/yaniswang/HTMLHint/wiki/Rules)
 
 ```js
-const hint = require('posthtml-hint')('./.htmlhintrc')
+const hint = require('posthtml-hint')('./path/to/.htmlhintrc')
 ```
 
 ### Example using Node API
@@ -38,5 +36,24 @@ posthtml([ hint ])
   .then(result => console.log(result.html))
 ```
 #### Output
+```bash
+PostHTML HINT
+-------------
 
-![](https://github.com/doshprompt/htmlhint-stylish/blob/master/screenshot.png)
+✖ error [10:12]
+Special characters must be escaped : [ > ].
+
+✖ error [12:3]
+Special characters must be escaped : [ < ].
+
+✖ error [12:21]
+Special characters must be escaped : [ < ].
+
+✖ error [12:30]
+Special characters must be escaped : [ > ].
+
+✖ error [15:17]
+Tag must be paired, no start tag: [ </h1> ]
+
+⚠  5 Errors
+```
