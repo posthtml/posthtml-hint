@@ -1,23 +1,36 @@
 {
   "name": "posthtml-hint",
-  "version": "0.3.0",
-  "description": "Package HTML for PostHTML",
+  "version": "0.8.0",
+  "description": "HTML Hint for PostHTML",
   "engines": {
     "node": ">=4"
   },
   "main": "index.js",
   "dependencies": {
     "htmlhint": "^0.9.12",
-    "posthtml-render": "^1.0.5"
+    "log-symbols": "^1.0.2",
+    "posthtml-render": "^1.0.5",
+    "text-table": "^0.2.0"
   },
   "devDependencies": {},
+  "keywords": [
+    "HTML",
+    "HTMLHINT",
+    "PostHTML",
+    "PostHTML Plugin",
+    "PostHTML Hint"
+  ],
   "author": {
     "name": "Michael Ciniawky",
     "email": "michael.ciniawsky@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "http:/github.com/michael-ciniawsky/posthtml-hint"
+    "url": "https:/github.com/michael-ciniawsky/posthtml-hint"
   },
+  "bugs": {
+    "url": "https://github.com/michael-ciniawsky/posthtml-hint/issues"
+  },
+  "homepage": "https://github.com/michael-ciniawsky/posthtml-hint#readme",
   "license": "MIT"
 }

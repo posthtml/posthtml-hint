@@ -8,10 +8,16 @@ const fs = require('fs')
 const path = require('path')
 
 const chalk = require('chalk')
-
-const htmlhint = require('htmlhint').HTMLHint
+const tab = require('text-table')
+const log = require('log-symbols')
 
 const render = require('posthtml-render')
+const htmlhint = require('htmlhint').HTMLHint
+
+const title = require('./lib/title')
+const type = require('./lib/type')
+const line = require('./lib/line')
+const message = require('./lib/msg')
 
 exports = module.exports = function (options) {
   options = options || {}
@@ -20,10 +26,29 @@ exports = module.exports = function (options) {
     options = fs.readFileSync(path.resolve(options), 'utf8')
   }
 
-  return function PostHTMLHint (tree) {
-    htmlhint.verify(render(tree), options).forEach(msg => {
-      console.log(msg)
-    })
+  return function postHTMLHint (tree) {
+    let messages = htmlhint.verify(render(tree), options)
+
+    title('\nPostHTML HINT')
+
+    let table = tab(messages.map(msg => {
+      let row = [
+        `\n${type(msg.type) + ' ' + line(msg.line, msg.col)}`,
+        `\n${message(msg.message)}`
+      ]
+
+      return row
+    }), {align: 'l', hsep: ''})
+
+    console.log(table)
+
+    let result = messages.length
+
+    if (result === 0) {
+      console.log(chalk.green(`${log.success}  ${result} Errors`))
+    } else {
+      console.log(chalk.red(`\n${log.warning}  ${result} Errors`))
+    }
     return tree
   }
 }
