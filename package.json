@@ -36,7 +36,6 @@
     "posthtml-render": "^1.0.5",
     "text-table": "^0.2.0"
   },
-<<<<<<< HEAD
   "devDependencies": {
     "ava": "^0.15.2",
     "babel-core": "^6.9.1",
@@ -47,17 +46,10 @@
     "posthtml": "^0.8.7",
     "standard": "^7.1.2"
   },
-=======
-  "devDependencies": {},
->>>>>>> c74feb8... add output styling, pkg version bump
   "keywords": [
     "HTML",
     "HTMLHINT",
     "PostHTML",
-<<<<<<< HEAD
-=======
-    "PostHTML Plugin",
->>>>>>> c74feb8... add output styling, pkg version bump
     "PostHTML Hint"
   ],
   "author": {
@@ -66,20 +58,17 @@
   },
   "repository": {
     "type": "git",
-<<<<<<< HEAD
     "url": "https://github.com/posthtml/posthtml-hint"
   },
   "bugs": {
     "url": "https://github.com/posthtml/posthtml-hint/issues"
   },
   "homepage": "https://github.com/posthtml/posthtml-hint#readme",
-=======
-    "url": "https:/github.com/michael-ciniawsky/posthtml-hint"
+    "url": "https://github.com/posthtml/posthtml-hint"
   },
   "bugs": {
-    "url": "https://github.com/michael-ciniawsky/posthtml-hint/issues"
+    "url": "https://github.com/posthtml/posthtml-hint/issues"
   },
-  "homepage": "https://github.com/michael-ciniawsky/posthtml-hint#readme",
->>>>>>> c74feb8... add output styling, pkg version bump
+  "homepage": "https://github.com/posthtml/posthtml-hint#readme",
   "license": "MIT"
 }
