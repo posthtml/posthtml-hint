@@ -19,7 +19,7 @@ const type = require('./lib/type')
 const line = require('./lib/line')
 const message = require('./lib/msg')
 
-exports = module.exports = function (options) {
+module.exports = function (options) {
   options = options || {}
 
   if (typeof options === 'string') {

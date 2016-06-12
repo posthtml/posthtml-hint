@@ -1,23 +1,55 @@
 {
   "name": "posthtml-hint",
-  "version": "0.8.1",
+  "version": "1.0.0",
   "description": "HTML Hint for PostHTML",
-  "engines": {
-    "node": ">=4"
-  },
+  "engines": {"node": ">=4", "npm": ">=3"},
   "main": "index.js",
+  "scripts": {
+    "clean": "echo '=> Cleaning' && rm -rf .nyc_output coverage test/node_modules",
+    "pretest": "echo '=> Linting' && standard",
+    "test": "echo '=> Testing' npm run clean && nyc ava 'test/*.test.js'",
+    "start": "echo '=> Starting' && sudo npm test"
+  },
+  "ava": {
+    "babel": "inherit"
+  },
+  "nyc": {
+    "all": true,
+    "require": "babel-register",
+    "include": ["lib", "test"],
+    "extension": [".js"]
+  },
+  "standard": {
+    "ignore": []
+  },
+  "babel": {
+    "env": {
+      "development": {
+        "sourceMaps": "inline"
+      }
+    },
+    "presets": ["es2015"]
+  },
   "dependencies": {
     "htmlhint": "^0.9.12",
     "log-symbols": "^1.0.2",
     "posthtml-render": "^1.0.5",
     "text-table": "^0.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "ava": "^0.15.2",
+    "babel-core": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-register": "^6.9.0",
+    "coveralls": "^2.11.9",
+    "nyc": "^6.4.4",
+    "posthtml": "^0.8.7",
+    "standard": "^7.1.2"
+  },
   "keywords": [
     "HTML",
     "HTMLHINT",
     "PostHTML",
-    "PostHTML Plugin",
     "PostHTML Hint"
   ],
   "author": {
@@ -26,11 +58,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https:/github.com/michael-ciniawsky/posthtml-hint"
+    "url": "https://github.com/posthtml/posthtml-hint"
   },
   "bugs": {
-    "url": "https://github.com/michael-ciniawsky/posthtml-hint/issues"
+    "url": "https://github.com/posthtml/posthtml-hint/issues"
   },
-  "homepage": "https://github.com/michael-ciniawsky/posthtml-hint#readme",
+  "homepage": "https://github.com/posthtml/posthtml-hint#readme",
   "license": "MIT"
 }
