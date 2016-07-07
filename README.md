@@ -1,27 +1,23 @@
 [![NPM][npm]][npm-url]
-[![Node][node]][node-url]
-[![Dependencies][deps]][deps-url]
-[![DevDependencies][devdeps]][devdeps-url]
+[![Deps][deps]][deps-url]
+[![Tests][travis]][travis-url]
+[![Coverage][cover]][cover-url]
 [![Standard Code Style][style]][style-url]
 
-# PostHTML Hint <img align="right" width="200" height="200" title="PostHTML logo" src="http://posthtml.github.io/posthtml/logo.svg">
+<div align="center">
+  <img width="220" height="150" title="PostHTML" src="http://posthtml.github.io/posthtml/logo.svg">
+  <h1>Hint Plugin</h1>
+  <p>Lint files with <a href="http://htmlhint.com">HTML HINT</a></p>
+</div>
 
-Lint files with [HTML Hint](http://htmlhint.com)
-
-## Install
+<h2 align="center">Install</h2>
 
 ```bash
-$ npm i -D posthtml-hint
+npm i -D posthtml-hint
 ```
 
-## Status
+<h2 align="center">Usage</h2>
 
-| Branch               | Build                     | Coverage                  |
-|:--------------------:|:-------------------------:|:-------------------------:|
-|  Master              | ![travis]                 | ![cover]                  |
-|  Develop             | ![travis-dev]             | ![cover-dev]              |
-
-## Usage
 #### Options
 
 **Rules [String|Object]**
@@ -32,25 +28,23 @@ $ npm i -D posthtml-hint
 const hint = require('posthtml-hint')('./path/to/.htmlhintrc')
 ```
 
-#### Example
-
-For general usage and build process integration see [PostHTML Docs](https://github.com/posthtml/posthtml#usage)
+<h2 align="center">Example</h2>
 
 ```js
-const fs = require('fs')
+const { readFileSync } = require('fs')
 
 const posthtml = require('posthtml')
 
 const hint = require('posthtml-hint')(/* options */)
-
-let html = fs.readFileSync('./index.html', 'utf8')
+const html = readFileSync('./index.html', 'utf8')
 
 posthtml([ hint ])
   .process(html)
   .then(result => console.log(result.html))
 ```
 
-#### Output
+#### Console
+
 ```bash
 PostHTML HINT
 -------------
@@ -73,11 +67,11 @@ Tag must be paired, no start tag: [ </h1> ]
 ⚠  5 Errors
 ```
 
-## LICENSE [![MIT][license]][license-url]
+<h2 align="center">LICENSE</h2>
 
 > MIT License (MIT)
 
->Copyright (c) Michael Ciniawsky
+>Copyright (c) PostHTML Michael Ciniawsky <michael.ciniawsky@gmail.com>
 
 > Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -100,14 +94,8 @@ SOFTWARE.
 [npm]: https://img.shields.io/npm/v/posthtml-hint.svg
 [npm-url]: https://npmjs.com/package/posthtml-hint
 
-[node]: https://img.shields.io/node/v/gh-badges.svg?maxAge=2592000
-[node-url]: https://nodejs.org
-
 [deps]: https://david-dm.org/posthtml/posthtml-hint.svg
 [deps-url]: https://david-dm.org/posthtml/posthtml-hint
-
-[devdeps]: https://david-dm.org/posthtml/posthtml-hint/dev-status.svg
-[devdeps-url]: https://david-dm.org/posthtml/posthtml-hint#info=devDependencies
 
 [style]: https://img.shields.io/badge/code%20style-standard-yellow.svg
 [style-url]: http://standardjs.com/
@@ -115,20 +103,5 @@ SOFTWARE.
 [travis]: http://img.shields.io/travis/posthtml/posthtml-hint.svg
 [travis-url]: https://travis-ci.org/posthtml/posthtml-hint
 
-[travis-rel]: http://img.shields.io/travis/posthtml/posthtml-hint.svg?branch=release/1.0.0
-[travis-rel-url]:https://travis-ci.org/posthtml/posthtml-hint?branch=release/1.0.0
-
-[travis-dev]: http://img.shields.io/travis/posthtml/posthtml-hint.svg?branch=develop
-[travis-dev-url]: https://travis-ci.org/posthtml/posthtml-hint?branch=develop
-
 [cover]: https://coveralls.io/repos/github/posthtml/posthtml-hint/badge.svg?branch=master
 [cover-url]: https://coveralls.io/github/posthtml/posthtml-hint?branch=master
-
-[cover-rel]: https://coveralls.io/repos/github/posthtml/posthtml-hint/badge.svg?branch=release<ver>
-[cover-rel-url]: https://coveralls.io/github/posthtml/posthtml-hint?branch=release<ver>
-
-[cover-dev]: https://coveralls.io/repos/github/posthtml/posthtml-hint/badge.svg?branch=develop
-[cover-dev-url]: https://coveralls.io/github/posthtml/posthtml-hint?branch=develop
-
-[license]: https://img.shields.io/github/license/posthtml/posthtml-hint.svg
-[license-url]: https://raw.githubusercontent.com/posthtml/posthtml-hint/master/LICENSE
