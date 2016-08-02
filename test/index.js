@@ -1,12 +1,22 @@
+// ------------------------------------
+// #POSTHTML - HINT - TEST
+// ------------------------------------
+
 'use strict'
 
-const fs = require('fs')
+const test = require('ava')
+const plugin = require('../')
 
-const posthtml = require('posthtml')
-const plugin = require('../index')
+const { readFileSync } = require('fs')
 
-let html = fs.readFileSync('./index.html', 'utf-8')
+function read (path) {
+  return readFileSync(path, 'utf8')
+}
 
-posthtml([ plugin() ])
-  .process(html)
-  .then(result => console.log(result.html))
+test('should lint HTML and error as expected', (t) => {
+  require('posthtml')([ plugin() ])
+    .process(read('./fixtures/index.html'))
+    .then((result) => {
+      t.is(result.html, read('./expect/index.html'))
+    })
+})
