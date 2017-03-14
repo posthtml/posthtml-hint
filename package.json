@@ -64,11 +64,5 @@
     "url": "https://github.com/posthtml/posthtml-hint/issues"
   },
   "homepage": "https://github.com/posthtml/posthtml-hint#readme",
-    "url": "https://github.com/posthtml/posthtml-hint"
-  },
-  "bugs": {
-    "url": "https://github.com/posthtml/posthtml-hint/issues"
-  },
-  "homepage": "https://github.com/posthtml/posthtml-hint#readme",
   "license": "MIT"
 }
