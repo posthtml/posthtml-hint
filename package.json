@@ -44,7 +44,7 @@
     "coveralls": "^2.13.0",
     "nyc": "^6.4.4",
     "posthtml": "^0.8.7",
-    "standard": "^9.0.2"
+    "standard": "^10.0.0"
   },
   "keywords": [
     "HTML",
