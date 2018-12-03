@@ -20,7 +20,7 @@ test('should split long msgs', t => {
 
 test('should split longer msgs', t => {
   const res = msg([longMsg, longMsg, longMsg, longMsg, longMsg, longMsg, longMsg, longMsg, longMsg, longMsg, longMsg, longMsg, longMsg].join(' '))
-  const expect = '\u001b[34mlorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet.\u001b[39m\n\u001b[34mlorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet.\u001b[39m'
+  const expect = '\u001b[34mlorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet.\u001b[39m\n\u001b[34mlorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet.\u001b[39m\n\u001b[34mlorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet.\u001b[39m'
 
   t.is(res, expect)
 })
