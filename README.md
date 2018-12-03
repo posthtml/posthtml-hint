@@ -1,6 +1,5 @@
 [![NPM][npm]][npm-url]
 [![Deps][deps]][deps-url]
-[![Tests][build]][build-url]
 [![Coverage][cover]][cover-url]
 [![Standard Code Style][style]][style-url]
 [![Chat][chat]][chat-badge]
