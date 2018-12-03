@@ -31,18 +31,14 @@ module.exports = function (options) {
 
     title('\nPostHTML HINT')
 
-    let table = tab(messages.map(msg => {
-      let row = [
-        `\n${type(msg.type) + ' ' + line(msg.line, msg.col)}`,
-        `\n${message(msg.message)}`
-      ]
-
-      return row
-    }), { align: 'l', hsep: '' })
+    const table = tab(messages.map(msg => [
+      `\n${type(msg.type)} ${line(msg.line, msg.col)}`,
+      `\n${message(msg.message)}`
+    ]), { align: 'l', hsep: '' })
 
     console.log(table)
 
-    let result = messages.length
+    const result = messages.length
 
     if (result === 0) {
       console.log(chalk.green(`${log.success}  ${result} Errors`))
