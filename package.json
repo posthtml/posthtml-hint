@@ -10,7 +10,7 @@
   "scripts": {
     "clean": "echo '=> Cleaning' && rm -rf .nyc_output coverage test/node_modules",
     "pretest": "echo '=> Linting' && standard",
-    "test": "echo '=> Testing' npm run clean && nyc ava 'test/*.js'",
+    "test": "echo '=> Testing' npm run clean && nyc ava 'test/**/*.js'",
     "start": "echo '=> Starting' && npm test",
     "lint": "standard",
     "lint:fix": "standard --fix"
