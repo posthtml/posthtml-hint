@@ -38,7 +38,7 @@ module.exports = function (options) {
       ]
 
       return row
-    }), {align: 'l', hsep: ''})
+    }), { align: 'l', hsep: '' })
 
     console.log(table)
 
