@@ -12,7 +12,8 @@ const tab = require('text-table')
 const log = require('log-symbols')
 
 const render = require('posthtml-render')
-const htmlhint = require('htmlhint').HTMLHint
+const HTMLHintClass = require('htmlhint').HTMLHint
+const htmlhint = new HTMLHintClass()
 
 const title = require('./lib/title')
 const type = require('./lib/type')
@@ -27,7 +28,8 @@ module.exports = function (options) {
   }
 
   return function postHTMLHint (tree) {
-    let messages = htmlhint.verify(render(tree), options)
+    if (!tree.render) tree.render = render
+    const messages = htmlhint.verify(tree.render(tree), options)
 
     title('\nPostHTML HINT')
 
