@@ -8,10 +8,8 @@
   },
   "main": "index.js",
   "scripts": {
-    "clean": "echo '=> Cleaning' && rm -rf .nyc_output coverage test/node_modules",
-    "pretest": "echo '=> Linting' && standard",
-    "test": "echo '=> Testing' npm run clean && nyc ava 'test/**/*.js'",
-    "start": "echo '=> Starting' && npm test",
+    "pretest": "standard",
+    "test": "nyc ava --verbose",
     "lint": "standard",
     "lint:fix": "standard --fix"
   },
@@ -30,17 +28,18 @@
     "ignore": []
   },
   "dependencies": {
-    "htmlhint": "0.10.1",
-    "log-symbols": "2.2.0",
+    "htmlhint": "0.11.0",
+    "log-symbols": "3.0.0",
     "posthtml-render": "1.1.4",
     "text-table": "0.2.0"
   },
   "devDependencies": {
-    "ava": "0.25.0",
-    "coveralls": "3.0.2",
-    "nyc": "13.1.0",
-    "posthtml": "0.11.3",
-    "standard": "12.0.1"
+    "ava": "3.3.0",
+    "babel-register": "^6.26.0",
+    "coveralls": "3.0.9",
+    "nyc": "15.0.0",
+    "posthtml": "0.12.0",
+    "standard": "14.3.1"
   },
   "keywords": [
     "HTML",
