@@ -14,7 +14,7 @@ const fs = require('fs')
 async function run () {
   return new Promise((resolve, reject) => {
     const html = fs.readFileSync(path.join(__dirname, 'fixtures', 'index.html'), 'utf8')
-    posthtml([plugin()]).process(html).then(resolve, reject)
+    posthtml([plugin(path.join(__dirname, 'fixtures', '.htmlhintrc'))]).process(html).then(resolve, reject)
   })
 }
 
